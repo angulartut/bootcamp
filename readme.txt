@@ -126,3 +126,54 @@ https://stackoverflow.com/questions/47069944/if-ngmodel-is-used-within-a-form-ta
  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search {{searchText}}</button>
 
 
+
+
+creating modules
+===============
+->>>ng g module smple
+use prefix <---
+->>>ng g c sample/boom
+what it does ?
+
+import { BoomComponent } from './boom/boom.component';
+
+@NgModule({
+  declarations: [BoomComponent],
+
+->>> and then export the module from the sample module
+
+import { BoomComponent } from './boom/boom.component';
+
+@NgModule({
+  declarations: [BoomComponent],
+  exports:[
+    BoomComponent
+  ],
+  imports: [
+    CommonModule
+  ]
+})
+export class SampleModule { }
+
+->>> and in the main moduel do
+
+import { SampleModule } from './sample/sample.module';
+
+@NgModule({
+  declarations: [.... 
+  ],
+  imports: [
+    SampleModule,
+
+
+
+
+exercise (use the above module) seta  route 
+=======
+
+import { BoomComponent } from './sample/boom/boom.component';
+
+const routes: Routes = [
+  { path:'' , redirectTo:'/home', pathMatch:'full' },
+  { path:'home' , component: HomeComponent },
+  { path:'boom' , component: BoomComponent },
