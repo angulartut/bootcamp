@@ -1,0 +1,22 @@
+PUBLISHING LIBRARIES TO NPM
+
+ng new myapp
+ng generate library mylibnav
+ng build mylibnav
+cd dist/mylibnav
+npm publish
+npm i mylibnav
+import { MylibnavModule } from 'mylibnav';
+
+imports: [
+BrowserModule,
+AppRoutingModule,
+MylibnavModule
+],
+
+import { MylibnavService } from 'mylibnav';
+constructor(private me: MylibnavService){
+console.log(this.me.getData());
+}
+
+ng serve
