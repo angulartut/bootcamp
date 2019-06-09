@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Sam</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li *ngFor="let route of routes" class="nav-item "  routerLinkActive="active">
+        <a class="nav-link" [routerLink]="[route.link]" >{{route.name}} </a>
+      </li>           
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" [value]="searchText" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search {{searchText}}</button>
+    </form>
+  </div>
+</nav>
+<div class="row">
+  <div class="col-xs-12 col-12 col-md-4 form-group">
+    <input type="text"
+                placeholder="Datepicker"
+                class="form-control"
+                bsDatepicker>
+  </div>
+  <div class="col-xs-12 col-12 col-md-4 form-group">
+    <input type="text"
+            placeholder="Daterangepicker"
+            class="form-control"
+            bsDaterangepicker>
+  </div>
+</div>
+<router-outlet></router-outlet>

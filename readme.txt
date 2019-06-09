@@ -95,3 +95,9 @@ routes=[
     {name:'About Us', link:'/about/us'},
     {name:'Foo', link:'/foo'} 
   ];
+
+
+one way data binding
+=====================
+
+<input class="form-control mr-sm-2" type="search" [value]="searchText" placeholder="Search" aria-label="Search"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search {{searchText}}</button>
