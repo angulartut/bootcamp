@@ -79,3 +79,19 @@ use <router-outlet></router-outlet>
 
 
   <a class="nav-link" [routerLink]="['/about/us']" >About </a>
+
+
+Simplify routes
+==============
+use ng for
+<li *ngFor="let route of routes" class="nav-item "  routerLinkActive="active">
+        <a class="nav-link" [routerLink]="[route.link]" >{{route.name}} </a>
+      </li>   
+
+routes=[
+    {name:'Home', link:'/home'},
+    {name:'About', link:'/about'},
+    {name:'About Me', link:'/about/me'},
+    {name:'About Us', link:'/about/us'},
+    {name:'Foo', link:'/foo'} 
+  ];
