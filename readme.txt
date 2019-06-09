@@ -8,7 +8,7 @@ ng --version
 Create new project 
 ==================
 
-ng new bootcamp --routing
+ng new bootcamp --routing  --style=scss
 ng serve -o 
 
 update to latest angular
@@ -46,3 +46,36 @@ ng add ngx-bootstrap  --component typeahead
 how to use 
 ===========
 https://valor-software.com/ngx-bootstrap/#/documentation
+
+create components 
+================
+ng g c home
+ng g c about
+ng g c about-me
+ng g c about-us
+ng g c page-not-found
+
+
+Adding routes
+===============
+inside app-routing.module.ts update routes
+
+const routes: Routes = [
+  { path:'' , redirectTo:'/home', pathMatch:'full' },
+  { path:'home' , component: HomeComponent },
+  {
+    path:'about' ,
+    component: AboutComponent ,
+    children: [
+      { path: 'me', component: AboutMeComponent },
+      { path: 'us', component: AboutUsComponent },
+      { path: '**', redirectTo: '/about', pathMatch: 'full' }
+    ]
+  },
+  { path:'**' , component: PageNotFoundComponent },
+];
+
+use <router-outlet></router-outlet>
+
+
+  <a class="nav-link" [routerLink]="['/about/us']" >About </a>
