@@ -99,5 +99,30 @@ routes=[
 
 one way data binding
 =====================
+export class AppComponent {
+  title = 'bootcamp';
+  searchText = "Initial search text"
 
 <input class="form-control mr-sm-2" type="search" [value]="searchText" placeholder="Search" aria-label="Search"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search {{searchText}}</button>
+
+
+two way data binding
+=====================
+import { FormsModule } from '@angular/forms';
+
+@NgModule({
+  declarations: [... 
+  ],
+  imports: [
+    FormsModule,
+
+then use ngModel
+
+[(ngModel)] banana in a box
+
+you MUST include a name
+https://stackoverflow.com/questions/47069944/if-ngmodel-is-used-within-a-form-tag-set-name-or-set-standalone-error?rq=1
+ <input class="form-control mr-sm-2" name="search" type="search" [(ngModel)]="searchText" placeholder="Search" aria-label="Search">
+ <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search {{searchText}}</button>
+
+
