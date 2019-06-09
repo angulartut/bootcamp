@@ -128,7 +128,7 @@ https://stackoverflow.com/questions/47069944/if-ngmodel-is-used-within-a-form-ta
 
 
 
-creating modules
+creating modules - when you create modules, you must export the components
 ===============
 ->>>ng g module smple
 use prefix <---
