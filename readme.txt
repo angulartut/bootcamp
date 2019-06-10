@@ -256,3 +256,20 @@ export class TruncatePipe implements PipeTransform {
 
 }
 
+pipe as a function just like a service
+==================
+
+add pipe to provider in ng module so we cn di it
+ providers: [TruncatePipe],
+
+then DI it into the component
+
+ 
+  constructor(private truncatePipe: TruncatePipe) { }
+
+  ngOnInit() {
+    this.post.summary = this.truncatePipe.transform(this.post.summary,30);
+  }
+
+
+
