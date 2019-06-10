@@ -177,3 +177,17 @@ const routes: Routes = [
   { path:'' , redirectTo:'/home', pathMatch:'full' },
   { path:'home' , component: HomeComponent },
   { path:'boom' , component: BoomComponent },
+
+interpolation
+=============
+title: string;
+  summary: string;
+  constructor() { }
+
+  ngOnInit() {
+    this.title = "Blog Title";
+    this.summary = "Blog Summary";
+  }
+
+    <h6 class="card-title">{{title}}</h6>
+    <p class="card-text">{{summary}}</p>
