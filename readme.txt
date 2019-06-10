@@ -191,3 +191,16 @@ title: string;
 
     <h6 class="card-title">{{title}}</h6>
     <p class="card-text">{{summary}}</p>
+
+passing attribute
+=================
+  @Input() title: string;
+  @Input()summary: string;
+OR
+
+  @Input('title') title: string;
+  @Input('summary') summary: string;
+
+
+<app-blog-post-tile title="blog Title" summary="Summary 1"></app-blog-post-tile>
+
