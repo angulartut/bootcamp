@@ -204,3 +204,31 @@ OR
 
 <app-blog-post-tile title="blog Title" summary="Summary 1"></app-blog-post-tile>
 
+passing instances / via creating class
+=================
+ng g class blog-post
+
+export class BlogPost {
+    constructor(public title:string, public summary : string){}
+}
+
+that is typescript constructor construct
+
+in child ===
+  @Input() post: BlogPost;
+
+  <h6 class="card-title">{{post.title}}</h6>
+  <p class="card-text">{{post.summary}}</p>
+
+in parent =====
+  blogPosts: BlogPost[] =[]
+  constructor() { }
+
+  ngOnInit() {
+    this.blogPosts.push(new BlogPost("Some title1", "Some Summary1"));
+    this.blogPosts.push(new BlogPost("Some title2", "Some Summary2"));
+
+
+<app-blog-post-tile *ngFor="let post of blogPosts" [post]="post"></app-blog-post-tile>
+
+
